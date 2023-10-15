@@ -5,9 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public void PlayGame()
+
+    public int Level1Number;
+
+    //public void PlayGame()
+    //{
+    //    SceneManager.LoadScene(1);
+    //}
+
+    IEnumerator PlayGame1() 
     {
-        SceneManager.LoadScene(1);
+        yield return new WaitForSeconds(1.0f);
+    
+        SceneManager.LoadScene(Level1Number);
+    }
+
+    public void PlayGame ()
+    {
+        StartCoroutine(PlayGame1());
     }
 
     public void GoBackMenu()
