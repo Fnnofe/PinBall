@@ -16,7 +16,7 @@ public class BallRespawn : MonoBehaviour
         {
             //Invoke("LoadScene", 0.0001f);
             transform.position = ballStart.transform.position;
-
+            ballStart.gameObject.GetComponent<Rigidbody2D>().velocity=new Vector2(0,0);
         }
     }
 }
