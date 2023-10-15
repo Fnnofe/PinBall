@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iLevelToLoad: 1
   useIntegerToLoadLevel: 1
-  timerText: {fileID: 0}
+  timerText: {fileID: 1494296999}
   currentTime: 60
   countDown: 1
   hasLimit: 1
