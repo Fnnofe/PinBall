@@ -13,12 +13,13 @@ using UnityEngine;
 public class SpinningPlatform : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] float spinSpeed=100f;
+    [SerializeField] float spinSpeed = 100f;
     [SerializeField] bool isReversed = false;
+    [SerializeField] int stopSpeed = 5;
 
     void Start()
     {
-        rb= GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         if (isReversed == true)
         {
             spinSpeed = spinSpeed * -1;
@@ -31,11 +32,16 @@ public class SpinningPlatform : MonoBehaviour
     {
 
         if (Input.GetKeyDown(KeyCode.Space))
-                {
+        {
             Spinning();
 
         }
+        if (rb.angularVelocity < 1 && rb.angularVelocity > -1)
+        {
+            rb.angularVelocity = 0;
 
+        }
+        else rb.angularVelocity = rb.angularVelocity - stopSpeed * spinSpeed * Time.deltaTime;
 
 
     }
@@ -43,7 +49,7 @@ public class SpinningPlatform : MonoBehaviour
 
     void Spinning()
     {
-        rb.angularVelocity = spinSpeed*10;
+        rb.angularVelocity = spinSpeed * 10;
 
     }
 }
