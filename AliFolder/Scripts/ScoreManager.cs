@@ -46,7 +46,7 @@ public class ScoreManager : MonoBehaviour
         if (score == 3)
         {
             YaySound.Play();
-            Invoke("LoadScene", 0.5f);
+            Invoke("LoadScene", 0.1f);
             //YaySound.Play();
         }
     }
