@@ -31,7 +31,7 @@ public class ScoreManager : MonoBehaviour
         YaySound = GetComponent<AudioSource>();
         highscore = PlayerPrefs.GetInt("highscore", 0);
         scoreText.text = score.ToString() + " Balls Scored" ;
-        highscoreText.text = "HIGHSCORE:" + highscore.ToString();
+        //highscoreText.text = "HIGHSCORE:" + highscore.ToString();
     }
 
     public void AddPoint()
@@ -46,7 +46,7 @@ public class ScoreManager : MonoBehaviour
         if (score == 3)
         {
             YaySound.Play();
-            Invoke("LoadScene", 1f);
+            Invoke("LoadScene", 0.5f);
             //YaySound.Play();
         }
     }
