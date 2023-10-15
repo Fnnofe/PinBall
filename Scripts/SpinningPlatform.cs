@@ -15,6 +15,7 @@ public class SpinningPlatform : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField] float spinSpeed=100f;
     [SerializeField] bool isReversed = false;
+    [SerializeField] int stopSpeed = 5;
 
     void Start()
     {
@@ -35,7 +36,12 @@ public class SpinningPlatform : MonoBehaviour
             Spinning();
 
         }
+        if(rb.angularVelocity <1 && rb.angularVelocity > -1)
+        {
+            rb.angularVelocity = 0;
 
+        }
+        else rb.angularVelocity = rb.angularVelocity - stopSpeed * spinSpeed * Time.deltaTime;
 
 
     }
